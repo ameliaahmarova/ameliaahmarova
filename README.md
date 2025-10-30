@@ -39,8 +39,8 @@
 
 ## Установка
 - **Bash**
-- git clone https://github.com/ameliaahmarova/simple-calculator.git
-- cd simple-calculator
+- git clone https://github.com/ameliaahmarova/ameliaakhmarova.git
+- cd ameliaakhmarova
 
 # Создание виртуального окружения
 python -m venv venv
