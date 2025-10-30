@@ -39,21 +39,21 @@
 
 ## Установка
 - **Bash**
-- git clone https://github.com/ameliaahmarova/ameliaakhmarova.git
-- cd ameliaakhmarova
+- git clone https://github.com/ameliaahmarova/ameliaahmarova.git
+- cd ameliaahmarova
 
 # Создание виртуального окружения
 python -m venv venv
 
 # Активация виртуального окружения
 # Для Windows:
-venv\Scripts\activate
+venv/Scripts/activate
 # Для Linux/Mac:
 source venv/bin/activate
 
 ## Запуск
 - **Bash**
-calculator.py
+winpty calculator.py
 
 ## Автор
 - Амелия Ахмарова
