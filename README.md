@@ -1,16 +1,21 @@
-## Hi there 👋
+# Привет, я Амелия 👋
 
-<!--
-**ameliaahmarova/ameliaahmarova** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+## Обо мне
+- 🎓 Студентка второго курса **РАНХиГС**
+- 💻 Увлекаюсь программированием и точными науками
+- 🌐 Изучаю иностранные языки
 
-Here are some ideas to get you started:
+## Основные направления
+- 🐍 **Python** - программирование и разработка
+- 📊 **Высшая математика** - аналитика и вычисления
+- 🔬 **Научные проекты** - исследовательская деятельность
+- 🌍 **Иностранные языки** - межкультурная коммуникация
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Технические навыки
+- `GitHub` - система контроля версий
+- `GitBash` - работа с командной строкой
+- `Python3` - программирование
+
+## Контакты
+- **GitHub** - https://github.com/ameliaahmarova
+- **Email** - ameliaakhmarova@gmail.com
