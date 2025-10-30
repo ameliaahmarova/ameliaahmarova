@@ -1,99 +1,99 @@
 
 """
-Простой калькулятор с базовыми операциями
+Simple Calculator with Basic Operations
 """
 
 def show_menu():
-    """Показывает меню калькулятора"""
-    print("\n=== Простой калькулятор ===")
-    print("1. Сложение (+)")
-    print("2. Вычитание (-)")
-    print("3. Умножение (*)")
-    print("4. Деление (/)")
-    print("5. Показать историю")
-    print("6. Очистить историю")
-    print("0. Выход")
+    """Shows the calculator menu"""
+    print("\n=== Simple Calculator ===")
+    print("1. Addition (+)")
+    print("2. Subtraction (-)")
+    print("3. Multiplication (*)")
+    print("4. Division (/)")
+    print("5. Show history")
+    print("6. Clear history")
+    print("0. Exit")
 
 def add(a, b):
-    """Сложение двух чисел"""
+    """Addition of two numbers"""
     return a + b
 
 def subtract(a, b):
-    """Вычитание двух чисел"""
+    """Subtraction of two numbers"""
     return a - b
 
 def multiply(a, b):
-    """Умножение двух чисел"""
+    """Multiplication of two numbers"""
     return a * b
 
 def divide(a, b):
-    """Деление двух чисел"""
+    """Division of two numbers"""
     if b == 0:
-        return "Ошибка: деление на ноль!"
+        return "Error: division by zero!"
     return a / b
 
 def get_number(prompt):
-    """Получает число от пользователя"""
+    """Gets a number from user"""
     while True:
         try:
             return float(input(prompt))
         except ValueError:
-            print("Ошибка! Введите число.")
+            print("Error! Please enter a number.")
 
 def main():
-    """Основная функция калькулятора"""
+    """Main calculator function"""
     history = []
     
     while True:
         show_menu()
-        choice = input("\nВыберите операцию (0-6): ")
+        choice = input("\nChoose operation (0-6): ")
         
         if choice == '0':
-            print("До свидания!")
+            print("Goodbye!")
             break
             
-        elif choice == '1':  # Сложение
-            a = get_number("Введите первое число: ")
-            b = get_number("Введите второе число: ")
+        elif choice == '1':  # Addition
+            a = get_number("Enter first number: ")
+            b = get_number("Enter second number: ")
             result = add(a, b)
             history.append(f"{a} + {b} = {result}")
-            print(f"Результат: {result}")
+            print(f"Result: {result}")
             
-        elif choice == '2':  # Вычитание
-            a = get_number("Введите первое число: ")
-            b = get_number("Введите второе число: ")
+        elif choice == '2':  # Subtraction
+            a = get_number("Enter first number: ")
+            b = get_number("Enter second number: ")
             result = subtract(a, b)
             history.append(f"{a} - {b} = {result}")
-            print(f"Результат: {result}")
+            print(f"Result: {result}")
             
-        elif choice == '3':  # Умножение
-            a = get_number("Введите первое число: ")
-            b = get_number("Введите второе число: ")
+        elif choice == '3':  # Multiplication
+            a = get_number("Enter first number: ")
+            b = get_number("Enter second number: ")
             result = multiply(a, b)
             history.append(f"{a} * {b} = {result}")
-            print(f"Результат: {result}")
+            print(f"Result: {result}")
             
-        elif choice == '4':  # Деление
-            a = get_number("Введите первое число: ")
-            b = get_number("Введите второе число: ")
+        elif choice == '4':  # Division
+            a = get_number("Enter first number: ")
+            b = get_number("Enter second number: ")
             result = divide(a, b)
             history.append(f"{a} / {b} = {result}")
-            print(f"Результат: {result}")
+            print(f"Result: {result}")
             
-        elif choice == '5':  # История
+        elif choice == '5':  # History
             if not history:
-                print("История пуста")
+                print("History is empty")
             else:
-                print("\nИстория операций:")
+                print("\nOperation history:")
                 for i, operation in enumerate(history, 1):
                     print(f"{i}. {operation}")
                     
-        elif choice == '6':  # Очистка истории
+        elif choice == '6':  # Clear history
             history.clear()
-            print("История очищена!")
+            print("History cleared!")
             
         else:
-            print("Неверный выбор! Попробуйте снова.")
+            print("Invalid choice! Please try again.")
 
 if __name__ == "__main__":
     main()
