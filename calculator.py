@@ -14,36 +14,6 @@ def show_menu():
     print("6. Clear history")
     print("0. Exit")
 
-def add(a, b):
-    """Addition of two numbers"""
-    return a + b
-
-def subtract(a, b):
-    """Subtraction of two numbers"""
-    return a - b
-
-def multiply(a, b):
-    """Multiplication of two numbers"""
-    return a * b
-
-def divide(a, b):
-    """Division of two numbers"""
-    if b == 0:
-        return "Error: division by zero!"
-    return a / b
-
-def get_number(prompt):
-    """Gets a number from user"""
-    while True:
-        try:
-            value = input(prompt)
-            # Allow user to exit number input
-            if value.lower() in ['exit', 'quit', 'back']:
-                return None
-            return float(value)
-        except ValueError:
-            print("Error! Please enter a valid number or type 'back' to return to menu.")
-
 def main():
     """Main calculator function"""
     history = []
@@ -51,62 +21,62 @@ def main():
     while True:
         show_menu()
         choice = input("\nChoose operation (0-6): ").strip()
+        print(f"DEBUG: You entered: '{choice}'")  # Отладочная печать
         
         if choice == '0':
             print("Goodbye!")
             break
             
         elif choice == '1':  # Addition
-            print("\n--- Addition ---")
-            a = get_number("Enter first number: ")
-            if a is None:
-                continue
-            b = get_number("Enter second number: ")
-            if b is None:
-                continue
-            result = add(a, b)
-            history.append(f"{a} + {b} = {result}")
-            print(f"Result: {result}")
-            
+            print("DEBUG: Entering addition...")  # Отладочная печать
+            try:
+                a = float(input("Enter first number: "))
+                b = float(input("Enter second number: "))
+                result = a + b
+                history.append(f"{a} + {b} = {result}")
+                print(f"Result: {result}")
+            except ValueError:
+                print("Error! Please enter valid numbers.")
+                
         elif choice == '2':  # Subtraction
-            print("\n--- Subtraction ---")
-            a = get_number("Enter first number: ")
-            if a is None:
-                continue
-            b = get_number("Enter second number: ")
-            if b is None:
-                continue
-            result = subtract(a, b)
-            history.append(f"{a} - {b} = {result}")
-            print(f"Result: {result}")
-            
+            print("DEBUG: Entering subtraction...")  # Отладочная печать
+            try:
+                a = float(input("Enter first number: "))
+                b = float(input("Enter second number: "))
+                result = a - b
+                history.append(f"{a} - {b} = {result}")
+                print(f"Result: {result}")
+            except ValueError:
+                print("Error! Please enter valid numbers.")
+                
         elif choice == '3':  # Multiplication
-            print("\n--- Multiplication ---")
-            a = get_number("Enter first number: ")
-            if a is None:
-                continue
-            b = get_number("Enter second number: ")
-            if b is None:
-                continue
-            result = multiply(a, b)
-            history.append(f"{a} * {b} = {result}")
-            print(f"Result: {result}")
-            
+            print("DEBUG: Entering multiplication...")  # Отладочная печать
+            try:
+                a = float(input("Enter first number: "))
+                b = float(input("Enter second number: "))
+                result = a * b
+                history.append(f"{a} * {b} = {result}")
+                print(f"Result: {result}")
+            except ValueError:
+                print("Error! Please enter valid numbers.")
+                
         elif choice == '4':  # Division
-            print("\n--- Division ---")
-            a = get_number("Enter first number: ")
-            if a is None:
-                continue
-            b = get_number("Enter second number: ")
-            if b is None:
-                continue
-            result = divide(a, b)
-            history.append(f"{a} / {b} = {result}")
-            print(f"Result: {result}")
-            
+            print("DEBUG: Entering division...")  # Отладочная печать
+            try:
+                a = float(input("Enter first number: "))
+                b = float(input("Enter second number: "))
+                if b == 0:
+                    print("Error: division by zero!")
+                else:
+                    result = a / b
+                    history.append(f"{a} / {b} = {result}")
+                    print(f"Result: {result}")
+            except ValueError:
+                print("Error! Please enter valid numbers.")
+                
         elif choice == '5':  # History
             if not history:
-                print("\nHistory is empty")
+                print("History is empty")
             else:
                 print("\nOperation history:")
                 for i, operation in enumerate(history, 1):
@@ -114,11 +84,10 @@ def main():
                     
         elif choice == '6':  # Clear history
             history.clear()
-            print("\nHistory cleared!")
+            print("History cleared!")
             
         else:
-            print("\nInvalid choice! Please try again.")
+            print("Invalid choice! Please try again.")
 
 if __name__ == "__main__":
     main()
-
