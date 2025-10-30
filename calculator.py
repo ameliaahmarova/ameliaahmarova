@@ -36,9 +36,13 @@ def get_number(prompt):
     """Gets a number from user"""
     while True:
         try:
-            return float(input(prompt))
+            value = input(prompt)
+            # Allow user to exit number input
+            if value.lower() in ['exit', 'quit', 'back']:
+                return None
+            return float(value)
         except ValueError:
-            print("Error! Please enter a number.")
+            print("Error! Please enter a valid number or type 'back' to return to menu.")
 
 def main():
     """Main calculator function"""
@@ -46,43 +50,63 @@ def main():
     
     while True:
         show_menu()
-        choice = input("\nChoose operation (0-6): ")
+        choice = input("\nChoose operation (0-6): ").strip()
         
         if choice == '0':
             print("Goodbye!")
             break
             
         elif choice == '1':  # Addition
+            print("\n--- Addition ---")
             a = get_number("Enter first number: ")
+            if a is None:
+                continue
             b = get_number("Enter second number: ")
+            if b is None:
+                continue
             result = add(a, b)
             history.append(f"{a} + {b} = {result}")
             print(f"Result: {result}")
             
         elif choice == '2':  # Subtraction
+            print("\n--- Subtraction ---")
             a = get_number("Enter first number: ")
+            if a is None:
+                continue
             b = get_number("Enter second number: ")
+            if b is None:
+                continue
             result = subtract(a, b)
             history.append(f"{a} - {b} = {result}")
             print(f"Result: {result}")
             
         elif choice == '3':  # Multiplication
+            print("\n--- Multiplication ---")
             a = get_number("Enter first number: ")
+            if a is None:
+                continue
             b = get_number("Enter second number: ")
+            if b is None:
+                continue
             result = multiply(a, b)
             history.append(f"{a} * {b} = {result}")
             print(f"Result: {result}")
             
         elif choice == '4':  # Division
+            print("\n--- Division ---")
             a = get_number("Enter first number: ")
+            if a is None:
+                continue
             b = get_number("Enter second number: ")
+            if b is None:
+                continue
             result = divide(a, b)
             history.append(f"{a} / {b} = {result}")
             print(f"Result: {result}")
             
         elif choice == '5':  # History
             if not history:
-                print("History is empty")
+                print("\nHistory is empty")
             else:
                 print("\nOperation history:")
                 for i, operation in enumerate(history, 1):
@@ -90,10 +114,11 @@ def main():
                     
         elif choice == '6':  # Clear history
             history.clear()
-            print("History cleared!")
+            print("\nHistory cleared!")
             
         else:
-            print("Invalid choice! Please try again.")
+            print("\nInvalid choice! Please try again.")
 
 if __name__ == "__main__":
     main()
+
