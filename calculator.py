@@ -5,7 +5,7 @@
 
 def show_menu():
     """Показывает меню калькулятора"""
-    print("\n🧮 Простой калькулятор")
+    print("\n=== Простой калькулятор ===")
     print("1. Сложение (+)")
     print("2. Вычитание (-)")
     print("3. Умножение (*)")
@@ -49,7 +49,7 @@ def main():
         choice = input("\nВыберите операцию (0-6): ")
         
         if choice == '0':
-            print("До свидания! 👋")
+            print("До свидания!")
             break
             
         elif choice == '1':  # Сложение
@@ -57,34 +57,34 @@ def main():
             b = get_number("Введите второе число: ")
             result = add(a, b)
             history.append(f"{a} + {b} = {result}")
-            print(f"✅ Результат: {result}")
+            print(f"Результат: {result}")
             
         elif choice == '2':  # Вычитание
             a = get_number("Введите первое число: ")
             b = get_number("Введите второе число: ")
             result = subtract(a, b)
             history.append(f"{a} - {b} = {result}")
-            print(f"✅ Результат: {result}")
+            print(f"Результат: {result}")
             
         elif choice == '3':  # Умножение
             a = get_number("Введите первое число: ")
             b = get_number("Введите второе число: ")
             result = multiply(a, b)
             history.append(f"{a} * {b} = {result}")
-            print(f"✅ Результат: {result}")
+            print(f"Результат: {result}")
             
         elif choice == '4':  # Деление
             a = get_number("Введите первое число: ")
             b = get_number("Введите второе число: ")
             result = divide(a, b)
             history.append(f"{a} / {b} = {result}")
-            print(f"✅ Результат: {result}")
+            print(f"Результат: {result}")
             
         elif choice == '5':  # История
             if not history:
                 print("История пуста")
             else:
-                print("\n📊 История операций:")
+                print("\nИстория операций:")
                 for i, operation in enumerate(history, 1):
                     print(f"{i}. {operation}")
                     
@@ -93,7 +93,7 @@ def main():
             print("История очищена!")
             
         else:
-            print("❌ Неверный выбор! Попробуйте снова.")
+            print("Неверный выбор! Попробуйте снова.")
 
 if __name__ == "__main__":
     main()
